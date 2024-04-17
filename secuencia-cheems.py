@@ -56,10 +56,17 @@ print(newWords)
 #4. convertimos en octal
 octal = []
 for word in newWords:
-
     octal.append(''.join(str(oct(ord(i))).lstrip("0o") for i in word))
 print(octal)
-#5. remplazamos 0 por 9 y 7 por 8
+#5. remplazamos 0 por 9 y 7 por 8 y lo agregamos al array nonal
+nonal = []
+for word in octal:
+    nonal.append(word.replace('0', '9').replace('7', '8'))
+print(nonal)
 #6. convertimos a letras
+letras = []
+for word in nonal:
+    letras.append(''.join(chr(int(i)+97) for i in word))
+print(letras)
 
 
