@@ -1,9 +1,13 @@
+def secuencia(word):
+    secuencia = []
+    for n in range(0, len(word)):
+        secuencia.append((((n+2)*8)%5))
+    return secuencia
 #1. convertimos en cheems y hallamos n
 #recibir una entrada
 words = input()
 
 #separamos words por palabras
-n = len(words)
 words = words.split()
 print(words)
 
@@ -17,8 +21,18 @@ for i in words:
     cheems.append(i)
 print(cheems)
 #2.  aplicamos la secuencia
+
+#para cada palabra aplicamos secuencia
+secuencias = []
+for i in cheems:
+    secuencias.append(secuencia(i))
+print(secuencias)
+
+
+
 #3. aplicamos los grupos
 #4. convertimos en octal
 #5. remplazamos 0 por 9
 #6. convertimos a letras
+
 
