@@ -10,15 +10,15 @@ words = input()
 #separamos words por palabras
 words = words.split()
 print(words)
-
 #convertir en cheems, si la palabra tiene r colocar antes m de la r en la palabra, si no tiene r colocar m al final de la palabra
 cheems = []
 for i in words:
-    #if 'r' in i:
-    #    i = i.replace('r', 'mr')
-    #else:
-    #    i = i + 'm'
+    if 'r' in i:
+        i = i.replace('r', 'mr')
+    else:
+        i = i + 'm'
     cheems.append(i)
+    
 print(cheems)
 #2.  aplicamos la secuencia
 

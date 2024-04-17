@@ -13,14 +13,15 @@ letras = letras.split()
 # 3. Convertir las letras a números
 numeros = []
 for letra in letras:
-    numeros.append(''.join(str(ord(i) - 97) for i in letras))
+    numeros.append(''.join(str(ord(i) - 97) for i in letra))
 print(numeros)
 
 # 4. Reemplazar '0' por '9' y '7' por '8'
 octales = []
 for numero in numeros:
-    octales.append(numeros.replace('9', '0').replace('8', '7'))
+    octales.append(numero.replace('9', '0').replace('8', '7'))
 print(octales)
+
 
 # 5. agregar 0o cada 3 digitos de octal
 nonales = []
@@ -43,8 +44,8 @@ for nonal in nonales:
 palabrasUnidas = []
 for palabra in palabras:
     palabraUnida = ''.join(palabra)
-    palabrasUnidas.append(palabra)
-print(palabras)
+    palabrasUnidas.append(palabraUnida)
+#print(palabras)
 
 #hallar secuencia de la entrada
 secuencias = []
@@ -53,32 +54,32 @@ for palabraUnida in palabrasUnidas:
     for n in range(1, len(palabraUnida)+1):
         secuencia.append((((n*8)+2)%5))
     secuencias.append(secuencia)
-print(secuencias)
+print(palabrasUnidas)
 
-#aplicar los grupos
 newWords = []
-#for word in palabras:
+for word in palabrasUnidas:
     #separar la palabra por la cantidad de letras de secuencia[i][j]
-for palabraUnida in palabrasUnidas:
     grupo = []
     newWord = []
     sumatoria = 0
-    for j in secuencia:
+    for j in secuencias[palabrasUnidas.index(word)]:
         #separar cada word en rangos de 0 a j1 y j1 a j2 y j2 a jn hasta que se acaben las letras
-        if sumatoria < len(palabrasUnidas):
-            grupo.append(palabras[sumatoria:sumatoria+j])
+        if sumatoria < len(word):
+            grupo.append(word[sumatoria:sumatoria+j])
         else:
             break
         sumatoria += j
-
-    for j in secuencia:
+    
+    for j in secuencias[palabrasUnidas.index(word)]:
         #indice j en secuencias[cheems.index(word)]
-        indice = secuencia.index(j)
-        newWord.append(chr(ord(palabras[indice]) - j))
+        indice = secuencias[palabrasUnidas.index(word)].index(j)
+        newWord.append(chr(ord(word[indice]) - j))
 
     #convertir newWord en string
     newWord = ''.join(newWord)
     newWords.append(newWord)
+print(newWords)
+
 
 # 6. Cambiar la posición de las letras según la secuencia
 print(newWords)
