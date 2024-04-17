@@ -1,13 +1,15 @@
 #1. convertimos en cheems y hallamos n
 #recibir una entrada
-n = input()
+words = input()
 
-#separamos n por palabras
-n = n.split()
-print(n)
+#separamos words por palabras
+n = len(words)
+words = words.split()
+print(words)
+
 #convertir en cheems, si la palabra tiene r colocar antes m de la r en la palabra, si no tiene r colocar m al final de la palabra
 cheems = []
-for i in n:
+for i in words:
     if 'r' in i:
         i = i.replace('r', 'mr')
     else:
